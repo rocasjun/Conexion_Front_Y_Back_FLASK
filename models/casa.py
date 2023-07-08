@@ -17,7 +17,7 @@ class Casa(db.Model):
     area = db.Column(db.Float(10,2))
     participacion = db.Column(db.Float(6,2))
 
-    recibo = db.relationship('Recibo', backref='recibo_casa')
+    recibo = db.relationship('Recibo', backref='casa')
 
     def __init__(self, id_casa, id_predio, id_estado, id_predio_mdu, numero, piso, area, participacion):
         self.id_casa = id_casa

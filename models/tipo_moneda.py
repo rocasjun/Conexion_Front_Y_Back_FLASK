@@ -14,6 +14,7 @@ class Tipo_Moneda(db.Model):
 
     cuentas = db.relationship('Cuenta', backref='moneda_cuenta')
     cuentas_predios = db.relationship('Cuenta_Predio', backref='moneda_cuenta_predio')
+    recaudacion_moneda = db.relationship('Recaudacion', backref='moneda_recaudacion')
 
     def __init__(self, descripcion, etiqueta):
         self.descripcion = descripcion
