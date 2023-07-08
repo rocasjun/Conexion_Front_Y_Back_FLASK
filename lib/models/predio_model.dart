@@ -7,6 +7,7 @@ class Predio {
   String correo;
   String direccion;
   String idUbigeo;
+  String url_imagen;
   TipoPredio tipoPredio;
 
   Predio({
@@ -17,6 +18,7 @@ class Predio {
     required this.correo,
     required this.direccion,
     required this.idUbigeo,
+    required this.url_imagen,
     required this.tipoPredio,
   });
 
@@ -28,7 +30,8 @@ class Predio {
       telefono: json['telefono'],
       correo: json['correo'],
       direccion: json['direccion'],
-      idUbigeo: json['idubigeo'],
+      idUbigeo: json['idubigeo'] != null ? json['idubigeo'] : '',
+      url_imagen: json['url_imagen'] != null ? json['url_imagen'] : '', // Asigna un valor predeterminado en caso de que sea nulo
       tipoPredio: TipoPredio.fromJson(json['tipo_predio']),
     );
   }
